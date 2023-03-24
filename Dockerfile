@@ -14,7 +14,8 @@ LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
 USER root
 
 RUN R -e "install.packages('BiocManager', repos='http://cran.rstudio.com/')" && \
-    R -e "install.packages('WGCNA', repos='http://cran.rstudio.com/')"
+    R -e "install.packages('WGCNA', repos='http://cran.rstudio.com/')" && \
+    R -e "BiocManager::install()"
     
 RUN R -e "update.packages(ask = FALSE, repos = 'http://cran.rstudio.com/')"
 
